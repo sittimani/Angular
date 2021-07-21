@@ -1,0 +1,7 @@
+<h1>Child component</h1>
+<p>Data received from parent component is: <b>{{parentData}}</b></p>
+
+<button (click)="sendValue()" (click)="startEvent()">Send Event</button>
+
+
+<ng-content select=".body"></ng-content>

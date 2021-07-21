@@ -1,0 +1,11 @@
+<p>This is text is shown form letsUseOnChange Component:<br>{{changeVar}}</p>
+
+
+<ul *ngFor="let value of changes;">
+    <li>{{value}}</li>
+</ul>
+
+
+<div>
+    <ng-content select=".body"></ng-content>
+</div>

@@ -1,0 +1,21 @@
+<h1>Parent Component</h1>
+<p>Hi lets go to child component</p>
+  <app-child-component (trueOrFalse)="key=$event" (childEvent)="msg=$event" [parentData]="name">
+  </app-child-component>
+  <h1>Parent Component</h1>
+  <p>Msg from child component: <b>{{msg | json}}</b></p>
+  {{key}}
+  <hr>
+  
+  <!------------------------------------------------------------------------------------------------->
+  <h1>Lets work on OnChanges</h1>
+  <input [(ngModel)]="textValue" type="text" >
+  
+  <app-lets-use-on-change [changeVar]="textValue">
+    <p  class="body">The text arrived from app component via ng-content</p>
+  </app-lets-use-on-change>
+
+
+
+  <hr>
+  <div [innerHTML]="content"></div>
