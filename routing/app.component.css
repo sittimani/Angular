@@ -1,0 +1,10 @@
+h1{
+    text-align: center;
+}
+
+nav a{
+    display: inline-block;
+    text-decoration: none;
+    background-color: #039ae5e1;
+    margin-left: 10px;
+}
