@@ -1,0 +1,19 @@
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<nav>
+    <input type="checkbox" id="check">
+    <label for="check">
+        <i class="checkbtn"><img src="../../../../assets/menu-bar.jfif"></i>
+    </label>
+    <label class="logo">{{title}}</label>
+    <ul>
+        <li><a routerLink="">Home</a></li>
+        <li><a routerLink="about">About</a></li>
+        <li><a routerLink="service">Sevices</a></li>
+        <li><a routerLink="feedback">Feedback</a></li>
+        <li><div *ngIf="user;else login"><a>Profile</a></div></li>
+    </ul>
+</nav>
+<ng-template #login>
+    <a>login</a>
+</ng-template>

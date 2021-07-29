@@ -1,0 +1,13 @@
+h3{
+    text-align: center;
+}
+td,tr,table,th{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 1%;
+}
+table{
+    margin: 1%;
+    width: 98%;
+    margin-bottom: 5%;
+}

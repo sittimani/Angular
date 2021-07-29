@@ -1,0 +1,57 @@
+<nav *ngIf="showNav">
+    <ul>
+        <li><a routerLink="../adduser">Add User</a></li>
+        <li><a routerLink="../display">display</a></li>
+    </ul>
+</nav>
+
+
+<div id="container">
+    <div id="form-container">
+        <form [formGroup]='form'>
+
+            <label>FirstName</label>
+            <input type="text" class="search-input" formControlName='firstName'>
+            <div *ngIf="form.get('firstName').invalid && form.get('firstName').touched">
+                <span *ngIf="form.get('firstName').errors?.required" class="error-message">FirstName required</span>
+                <span *ngIf="form.get('firstName').errors?.minlength" class="error-message">Minimum 3 characters required</span>
+            </div>
+
+            <label>LastName</label>
+            <input type="text" class="search-input" formControlName='lastName'>
+            <div *ngIf="form.get('lastName').invalid && form.get('lastName').touched">
+                <span *ngIf="form.get('lastName').errors?.required" class="error-message">Lastname required</span>
+                <span *ngIf="form.get('lastName').errors?.minlength" class="error-message">Minimum 3 characters required</span>
+            </div>
+
+            <label>Gender</label>
+            <div class="gender" >
+                <input type="radio" class="search-input" name="gender" value="Male" formControlName="gender"><small>Male</small>
+                <input type="radio" name="gender" value="Female" formControlName="gender"><small>Female</small>
+                <div *ngIf="form.get('gender').invalid && form.get('gender').touched">
+                    <span *ngIf="form.get('gender').errors?.required" class="error-message">Gender required</span>
+                </div>
+            </div>
+
+            <label>Age</label>
+            <input type="number" class="search-input" formControlName='age'>
+            <div *ngIf="form.get('age').invalid && form.get('age').touched">
+                <span *ngIf="form.get('age').errors?.min" class="error-message">Minimum age is 1</span>
+                <span *ngIf="form.get('age').errors?.required" class="error-message">Age Required</span>
+            </div>
+
+            <label>Email</label>
+            <input type="email" class="search-input" formControlName='email'>
+            <div *ngIf="form.get('email').invalid && form.get('email').touched">
+                <span *ngIf="form.get('email').errors?.invalidEmail" class="error-message">invalid email</span>
+            </div>
+
+            <div id="button-container">
+                <button (click)="addUser()" type="button" [disabled]='isAddDisabled'>Add</button>
+                <button (click)="updateUser()" type="button" [disabled]='isUpdateDisabled'>Update</button>
+            </div>
+        </form>
+    </div>
+
+    <p *ngIf="isValid" class="error-message">Please Fill the form correctly</p>
+</div>
